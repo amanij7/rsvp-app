@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const li = document.createElement('li');
         appendToLi('span', 'textContent', text);
-        appendToLi('label', 'textContent', 'Confirmed')
+        appendToLi('label', 'textContent', 'confirmed')
             .appendChild(createElement('input', 'type', 'checkbox'));
-        appendToLi('button', 'textContent', 'Edit');
-        appendToLi('button', 'textContent', 'Remove');
+        appendToLi('button', 'textContent', 'edit');
+        appendToLi('button', 'textContent', 'remove');
         return li;
     }
 
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     input.value = span.textContent;
                     li.insertBefore(input, span);
                     li.removeChild(span);
-                    button.textContent = 'Save';
+                    button.textContent = 'save';
                 },
                 save: () => {
                     const input = li.firstElementChild;
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     span.textContent = input.value;
                     li.insertBefore(span, input);
                     li.removeChild(input);
-                    button.textContent = 'Edit';
+                    button.textContent = 'edit';
                 }
             };
             // select and run action in button's name
